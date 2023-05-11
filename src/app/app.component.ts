@@ -27,9 +27,9 @@ export class AppComponent implements AfterViewInit {
     light.position.set(0, 50, 55);
     this.cadacThreeHandler.setGridHelper(30, 30);
 
-    const cube = this.cadacThreeHandler.createCube(8, 8, 8, '#f8f8f8');
+    const cube = this.cadacThreeHandler.createCube(8, 8, 8, '#f8f8f8', false);
 
-    const sphere = this.cadacThreeHandler.createSphere(5.2, '#eec63e');
+    const sphere = this.cadacThreeHandler.createSphere(5.2, '#eec63e', false);
 
     const sub = this.cadacThreeHandler.csgSubtract(
       { mesh: cube, position: new Vector3(10, 0, 0) },

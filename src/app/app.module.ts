@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {CadacThreeViewerModule} from "ngx-cadac-three-viewer";
+import {NgxCadacViewerModule} from "ngx-cadac-viewer";
 
 @NgModule({
   declarations: [
@@ -12,7 +12,7 @@ import {CadacThreeViewerModule} from "ngx-cadac-three-viewer";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CadacThreeViewerModule,
+    NgxCadacViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

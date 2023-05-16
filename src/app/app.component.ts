@@ -1,12 +1,8 @@
-import { AfterViewInit, Component } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {
-  BoxGeometry,
-  Mesh,
-  MeshNormalMaterial,
-  SphereGeometry,
   Vector3,
 } from 'three';
-import { CadacThree, CadacCSGOperation } from 'ngx-cadac-three-viewer';
+import {CadacThree, CadacCSGOperation} from 'ngx-cadac-viewer';
 
 @Component({
   selector: 'app-root',
@@ -32,8 +28,8 @@ export class AppComponent implements AfterViewInit {
     const sphere = this.cadacThreeHandler.createSphere(5.2, '#eec63e', false);
 
     const sub = this.cadacThreeHandler.csgSubtract(
-      { mesh: cube, position: new Vector3(10, 0, 0) },
-      { mesh: sphere, position: new Vector3(10, 0, 0) },
+      {mesh: cube, position: new Vector3(10, 0, 0)},
+      {mesh: sphere, position: new Vector3(10, 0, 0)},
       CadacCSGOperation.SUBTRACT,
       '#09ff00'
     );
@@ -46,8 +42,8 @@ export class AppComponent implements AfterViewInit {
     sub.add(subtractionText);
 
     const int = this.cadacThreeHandler.csgIntersect(
-      { mesh: cube, position: new Vector3(0, 10, 0) },
-      { mesh: sphere, position: new Vector3(0, 10, 0) },
+      {mesh: cube, position: new Vector3(0, 10, 0)},
+      {mesh: sphere, position: new Vector3(0, 10, 0)},
       CadacCSGOperation.INTERSECT,
       '#ff0000'
     );
@@ -61,8 +57,8 @@ export class AppComponent implements AfterViewInit {
     int.add(intersectionText);
 
     const union = this.cadacThreeHandler.csgUnion(
-      { mesh: cube, position: new Vector3(0, 0, 10) },
-      { mesh: sphere, position: new Vector3(0, 0, 10) },
+      {mesh: cube, position: new Vector3(0, 0, 10)},
+      {mesh: sphere, position: new Vector3(0, 0, 10)},
       CadacCSGOperation.UNION,
       '#e3b107'
     );
